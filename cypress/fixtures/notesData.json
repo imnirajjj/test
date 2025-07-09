@@ -1,0 +1,13 @@
+{
+    "email" : "tesssdffghfsds2@yopmail.com",    
+    "password" : "Password@123",
+    "name":"Tester",
+    "confirmpassword" : "Password@123",
+    "title" : "Test the existing features",
+    "desc" : "FEATURE: Messaging needs to be tested out.",
+    "updatedesc" : "Test Completed with 0 issues",
+    "updatetitle" : "Features Completed"
+
+}
+
+ 

@@ -1,0 +1,19 @@
+name: Run Cypress Tests
+
+on: [push, merge]
+
+jobs:
+  cypress-run:
+    runs-on: ubuntu-latest
+    needs: install
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Run Cypress tests
+        run: npx cypress run
+
