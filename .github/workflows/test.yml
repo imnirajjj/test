@@ -1,6 +1,9 @@
-name: Daily Cypress Test Run
+name: Daily and Push Cypress Test Run
 
 on:
+  push:
+    branches: 
+      - '**'  # This will trigger on push to any branch
   schedule:
     - cron: '0 0 * * *'  # Runs every day at 00:00 UTC
 

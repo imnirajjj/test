@@ -31,14 +31,18 @@ import LoginPage from '../pages/LoginPage';
 
 // cypress/support/commands.js
 // commands.js
+
 Cypress.Commands.add('loginWithFixture', () => {
-    cy.fixture('notesData').then((data) => {
-        const login = new LoginPage();
-        login.visit();
-        login.clickLogin();
-        login.fillEmail(data.email);
-        login.fillPassword(data.password);
-        login.clickloginButton();
-        cy.url().should('include', '/app');
+  cy.fixture('testData').then((testData) => {
+    cy.fixture('notesData').then((notesData) => {
+      const login = new LoginPage();
+      login.visit();
+      login.clickLogin();
+      login.fillEmail(testData.email);          // dynamic email
+      login.fillPassword(notesData.password);   // static password
+      login.clickloginButton();
+      cy.url().should('include', '/app');
     });
+  });
 });
+
